@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Exchange Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-wrapper">
+      <div class="converter-card">
+        <header class="card-header">
+          <div class="header-badge">💱</div>
+          <h1>Currency Converter</h1>
+          <p class="subtitle">Real-time global exchange rates at your fingertips</p>
+        </header>
+
+        <form id="currency-form" novalidate>
+          <div class="input-block">
+            <label for="amount-input">Amount</label>
+            <div class="input-wrapper">
+              <input
+                type="number"
+                id="amount-input"
+                name="amount"
+                min="0.01"
+                step="any"
+                value="1"
+                placeholder="0.00"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="selection-grid">
+            <div class="input-block">
+              <label for="base-currency">From</label>
+              <select id="base-currency" name="from">
+                <!-- Injected via JavaScript -->
+              </select>
+            </div>
+
+            <button
+              type="button"
+              id="swap-currencies-btn"
+              class="swap-button"
+              title="Swap currencies"
+              aria-label="Swap currencies"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 16V4M7 4L3 8M7 4L11 8" />
+                <path d="M17 8V20M17 20L21 16M17 20L13 16" />
+              </svg>
+            </button>
+
+            <div class="input-block">
+              <label for="target-currency">To</label>
+              <select id="target-currency" name="to">
+                <!-- Injected via JavaScript -->
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="submit-btn" class="convert-button">
+            <span>Convert</span>
+          </button>
+        </form>
+
+        <section class="result-display" id="result-display" aria-live="polite">
+          <div class="rate-status" id="rate-status">Ready to calculate</div>
+          <div class="final-result" id="final-result">--</div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
